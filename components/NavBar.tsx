@@ -1,16 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import Hamburger from "hamburger-react";
 import { useSpring, animated, config } from "react-spring";
 
-interface NavBarProps {
-  onToggle: () => void;
-  toggle: boolean;
-}
+import GlobalContext from "../shared/context/GlobalContext";
 
-export default function NavBar({ onToggle, toggle }: NavBarProps) {
+export default function NavBar() {
   const [shouldChange, setChange] = useState<boolean>(false);
+  const { setMenuToggle, menuToggle: toggle } = useContext(GlobalContext);
 
   const mobileStyles = useSpring({
     from: { transform: "translateX(-100%)" },
@@ -51,7 +49,7 @@ export default function NavBar({ onToggle, toggle }: NavBarProps) {
           <div
             className={`relative flex justify-end lg:hidden" z-35 text-white`}
           >
-            <Hamburger direction="right" rounded onToggle={onToggle} />
+            <Hamburger direction="right" rounded onToggle={setMenuToggle} />
           </div>
         </div>
 

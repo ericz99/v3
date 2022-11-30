@@ -14,13 +14,13 @@ export default function Hero() {
   return (
     <animated.div
       style={fadeHero}
-      className="relative px-6 pt-28 pb-12 h-full w-full flex flex-col items-center container mx-auto text-white lg:justify-center lg:p-0"
+      className="relative px-6 pt-28 pb-12 h-full w-full flex flex-col items-center container mx-auto text-white lg:justify-center"
     >
       <div className="flex flex-col justify-center items-center">
-        <h1 className="font-extrabold lg:font-black text-5xl">
+        <h1 className="font-extrabold lg:font-black text-6xl">
           Hi, I&apos;m Eric
         </h1>
-        <span className="font-medium text-sm text-gray-600 my-4">
+        <span className="font-medium text-md lg:text-lg text-gray-600 my-4">
           Software Engineer @ ???
         </span>
 

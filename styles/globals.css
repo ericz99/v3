@@ -20,6 +20,15 @@ body,
   box-sizing: border-box;
 }
 
+.bg-gradient {
+  background: rgb(17, 16, 16);
+  background: radial-gradient(
+    circle,
+    rgba(17, 16, 16, 1) 0%,
+    rgba(44, 45, 45, 1) 100%
+  );
+}
+
 .bg-gradient-gray {
   background: rgb(17, 16, 16);
   background: radial-gradient(
