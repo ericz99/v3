@@ -17,14 +17,14 @@ export default function Hero() {
       className="relative px-6 pt-14 pb-28 h-full w-full flex flex-col items-center container mx-auto text-white lg:justify-center"
     >
       <div className="flex flex-col justify-center items-center">
-        <h1 className="font-extrabold lg:font-black text-5xl">
+        <h1 className="font-extrabold lg:font-black text-5xl lg:text-6xl">
           Hi, I&apos;m Eric
         </h1>
         <span className="font-medium text-md lg:text-lg text-gray-600 my-4">
           Software Engineer @ ???
         </span>
 
-        <p className="font-extrabold text-5xl my-4 text-center lg:font-black lg:mx-6 lg:w-[50%] lg:leading-normal lg:my-0">
+        <p className="font-extrabold text-5xl lg:text-6xl my-4 text-center lg:font-black lg:mx-6 lg:w-[50%] lg:leading-normal lg:my-0">
           Passionate to craft amazing software application
         </p>
 
