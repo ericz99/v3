@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { GitHub, Linkedin } from "react-feather";
 import Hamburger from "hamburger-react";
 import { useSpring, animated, config } from "react-spring";
+import { Link as ReactScrollLink } from "react-scroll";
 
 import GlobalContext from "../shared/context/GlobalContext";
 
@@ -59,16 +60,19 @@ export default function NavBar() {
         >
           <ul className="h-full flex flex-col justify-center items-center text-white">
             <li className="capitalize text-3xl text-gray-300 font-light my-6">
-              Home
+              <ReactScrollLink smooth spy to="home">
+                Home
+              </ReactScrollLink>
             </li>
             <li className="capitalize text-3xl text-gray-300 font-light my-6">
-              About
+              <ReactScrollLink smooth spy to="experience">
+                Experience
+              </ReactScrollLink>
             </li>
             <li className="capitalize text-3xl text-gray-300 font-light my-6">
-              Explorer
-            </li>
-            <li className="capitalize text-3xl text-gray-300 font-light my-6">
-              Resume
+              <ReactScrollLink smooth spy to="project">
+                Project
+              </ReactScrollLink>
             </li>
           </ul>
         </animated.div>
@@ -76,30 +80,35 @@ export default function NavBar() {
 
       <animated.div
         style={desktopStyles}
-        className="z-10 hidden lg:flex lg:absolute lg:h-28 lg:top-0 lg:right-0 lg:w-full lg:py-4 lg:px-8 items-center justify-around"
+        className={`z-50 hidden lg:flex lg:fixed lg:h-28 lg:top-0 lg:right-0 lg:w-full lg:py-4 lg:px-8 items-center justify-around ${
+          shouldChange && "bg-gradient shadow-2xl"
+        }`}
       >
         <div className="flex flex-col justify-center items-center h-4 w-4 p-6 rounded-full bg-white">
           E
         </div>
         <ul className="flex justify-between">
           <li className="capitalize text-lg text-gray-300 font-light mx-4 cursor-pointer">
-            Home
+            <ReactScrollLink smooth spy to="home">
+              Home
+            </ReactScrollLink>
           </li>
           <li className="capitalize text-lg text-gray-300 font-light mx-4 cursor-pointer">
-            About
+            <ReactScrollLink smooth spy to="experience">
+              Experience
+            </ReactScrollLink>
           </li>
           <li className="capitalize text-lg text-gray-300 font-light mx-4 cursor-pointer">
-            Explorer
-          </li>
-          <li className="capitalize text-lg text-gray-300 font-light mx-4 cursor-pointer">
-            Resume
+            <ReactScrollLink smooth spy to="project">
+              Project
+            </ReactScrollLink>
           </li>
         </ul>
 
         <div className="flex justify-between">
           <div className="mx-2">
             <Link href="https://github.com/ericz99" target="__blank">
-              <AiFillGithub size={32} color="#ffffff" />
+              <GitHub size={28} color="#ffffff" />
             </Link>
           </div>
 
@@ -108,7 +117,7 @@ export default function NavBar() {
               href="https://www.linkedin.com/in/eric-zhang-241684155/"
               target="__blank"
             >
-              <AiFillLinkedin size={32} color="#ffffff" />
+              <Linkedin size={28} color="#ffffff" />
             </Link>
           </div>
         </div>

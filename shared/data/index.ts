@@ -37,7 +37,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "some url",
     sourceUrl: "https://github.com/ericz99/discord-clone",
-    imageUrl: "/discord-icon.png",
+    imageUrl: "/discord-clone-img.png",
   },
   {
     name: "Pair Programming",
@@ -55,11 +55,12 @@ export const projects: Project[] = [
     ],
     liveUrl: "some url",
     sourceUrl: "https://github.com/ericz99/peer-programming",
-    imageUrl: "/discord-icon.png",
+    imageUrl: "/peer-programming.png",
   },
   {
     name: "API Builder",
-    description: "Simple API CRUD Builder with MongoDB Schema support.",
+    description:
+      "Simple API CRUD Builder with MongoDB Schema support and ExpressJS.",
     techStack: [
       {
         name: "React",
@@ -70,8 +71,38 @@ export const projects: Project[] = [
         path: "/node-icon.png",
       },
     ],
-    liveUrl: "some url",
+    liveUrl: "https://eager-shannon-fb1119.netlify.app",
     sourceUrl: "https://github.com/ericz99/api-builder",
-    imageUrl: "/discord-icon.png",
+    imageUrl: "/api-builder.png",
+  },
+  {
+    name: "Personal Website V2",
+    description: "Second iteration of my website portfolio @ ericzhang.xyz",
+    techStack: [
+      {
+        name: "React",
+        path: "/react-icon.png",
+      },
+    ],
+    liveUrl: "https://objective-booth-c05f38.netlify.app/",
+    sourceUrl: "https://github.com/ericz99/v2",
+    imageUrl: "/v2-img.png",
+  },
+  {
+    name: "Personal Website V3",
+    description: "Current iteration of my website portfolio @ ericzhang.xyz",
+    techStack: [
+      {
+        name: "React",
+        path: "/react-icon.png",
+      },
+      {
+        name: "Node",
+        path: "/node-icon.png",
+      },
+    ],
+    liveUrl: "https://www.ericzhang.xyz/",
+    sourceUrl: "https://github.com/ericz99/v3",
+    imageUrl: "/v3-img.png",
   },
 ];

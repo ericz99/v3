@@ -6,9 +6,9 @@ import ProjectItem from "../ProjectItem";
 
 export default function ProjectSection() {
   return (
-    <div className="relative bg-gradient-gray w-full">
-      <div className="lg:max-w-[800px] mx-auto pt-24 pb-24 p-4 px-8">
-        <h1 className="flex items-center font-extrabold text-white lg:font-black text-4xl w-full h-full after:relative after:top-0 after:w-[575px] after:h-0.5 after:ml-8 after:bg-white">
+    <div id="project" className="relative bg-gradient-gray w-full">
+      <div className="lg:max-w-[1200px] mx-auto pt-24 pb-24 p-4 lg:px-8">
+        <h1 className="flex items-center font-extrabold text-white lg:font-black text-4xl w-full h-full after:relative after:top-0 after:w-[850px] after:h-0.5 after:ml-8 after:bg-white">
           Projects
         </h1>
         <p className="my-4 font-xs italic text-white">
@@ -17,16 +17,13 @@ export default function ProjectSection() {
 
         <div className="flex flex-col my-12">
           {projects.map((project, idx) => (
-            <div
-              className="flex mb-8 items-start bg-white py-4 px-6 lg:p-8 rounded-lg"
-              key={idx}
-            >
-              <ProjectItem project={project} />
+            <div className="mb-32 items-start rounded-lg" key={idx}>
+              <ProjectItem project={project} isOdd={idx % 2 == 1} />
             </div>
           ))}
         </div>
 
-        <h1 className="flex items-center font-extrabold text-white lg:font-black text-4xl w-full h-full after:relative after:top-0 after:w-[575px] after:h-0.5 after:ml-8 after:bg-white">
+        <h1 className="flex items-center font-extrabold text-white lg:font-black text-4xl w-full h-full after:relative after:top-0 after:w-[725px] after:h-0.5 after:ml-8 after:bg-white">
           Other Projects
         </h1>
         <p className="my-4 font-xs italic text-white">

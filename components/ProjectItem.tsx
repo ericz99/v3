@@ -1,50 +1,70 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { GitHub, Link2 } from "react-feather";
 
-import Button from "./Button";
 import { Project } from "../shared/interfaces";
 
 interface ProjectItemProps {
   project: Project;
+  isOdd: boolean;
 }
 
-export default function ProjectItem({ project }: ProjectItemProps) {
+export default function ProjectItem({ project, isOdd }: ProjectItemProps) {
   return (
-    <>
-      <div className="hidden lg:block rounded-md w-[75px] h-[75px]">
-        <Image
-          alt={project.name}
-          src={project.imageUrl}
-          width={75}
-          height={75}
-          sizes="100vw"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
+    <div className="grid grid-cols-12 gap-2.5">
+      <div
+        className={`z-30 row-span-full col-span-full ${
+          isOdd ? "lg:col-start-1 lg:col-span-8" : "lg:col-span-8 lg:col-end-12"
+        } self-center lg:mix-blend-normal mix-blend-overlay h-96 w-full`}
+      >
+        <Link href={project.liveUrl} target="_blank" className="cursor-pointer">
+          <Image
+            alt="Project_something"
+            src={project.imageUrl}
+            width={500}
+            height={500}
+            sizes="100vw"
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          />
+        </Link>
       </div>
 
-      <div className="flex justify-between lg:flex-col flex-1 lg:ml-8">
-        <h1 className="text-sm font-black lg:text-lg">{project.name}</h1>
+      <div
+        className={`z-30 row-span-full col-span-full h-full lg:h-auto ${
+          isOdd
+            ? "lg:col-span-8 lg:col-end-12 text-right"
+            : "lg:col-start-1 lg:col-span-8 text-left lg:ml-0"
+        } self-center flex p-4 lg:justify-end justify-center flex-col flex-1`}
+      >
+        <h1 className="text-sm mb-4 text-white font-black text-2xl lg:text-lg">
+          {project.name}
+        </h1>
 
-        <p className="hidden lg:block my-4 text-md font-medium text-black italic">
-          {project.description}
-        </p>
+        <div className="z-30 lg:shadow-lg lg:shadow-cyan-400/30 lg:bg-[#181818] lg:py-4 lg:px-8 rounded-lg">
+          <p className="my-4 text-md font-medium text-white italic">
+            {project.description}
+          </p>
+        </div>
 
-        <div className="flex justify-between items-center lg:items-start">
-          <ul className="hidden lg:flex justify-between">
+        <div
+          className={`z-30 flex flex-col justify-between ${
+            isOdd ? "items-end" : "items-start"
+          }`}
+        >
+          <ul className="flex justify-between my-8">
             {project.techStack.map((tech, idx2) => (
-              <li className="mr-2" key={idx2}>
+              <li className={`${isOdd ? "ml-4" : "mr-4"}`} key={idx2}>
                 <Image
                   alt={tech.name}
                   src={tech.path}
-                  width={50}
-                  height={50}
+                  width={32}
+                  height={32}
                   sizes="100vw"
                   style={{
-                    width: "100%",
                     height: "auto",
                   }}
                 />
@@ -52,23 +72,25 @@ export default function ProjectItem({ project }: ProjectItemProps) {
             ))}
           </ul>
 
-          <div className="flex">
-            <Button
-              type="button"
-              className="cursor-pointer uppercase py-1 px-4 text-sm lg:text-md text-white ml-4 lg:py-3 lg:p-6 bg-yellow-500 rounded-md font-semibold"
-            >
-              View
-            </Button>
-
+          <div className="flex items-center">
             <Link
               href={project.sourceUrl}
-              className="cursor-pointer uppercase py-1 px-4 text-sm lg:text-md text-white ml-4 lg:py-3 lg:p-6 bg-green-500 rounded-md font-semibold"
+              target="_blank"
+              className={`${isOdd ? "ml-4" : "mr-4"}`}
             >
-              Source
+              <GitHub size={28} color="#ffffff" />
+            </Link>
+
+            <Link
+              href={project.liveUrl}
+              target="_blank"
+              className={`${isOdd ? "ml-4" : "mr-4"}`}
+            >
+              <Link2 size={28} color="#ffffff" />
             </Link>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
