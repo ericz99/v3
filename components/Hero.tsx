@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <animated.div
       style={fadeHero}
-      className="relative px-6 pt-28 pb-12 h-full w-full flex flex-col items-center container mx-auto text-white lg:justify-center"
+      className="relative px-6 pt-64 pb-12 h-full w-full flex flex-col items-center container mx-auto text-white lg:justify-center"
     >
       <div className="flex flex-col justify-center items-center">
         <h1 className="font-extrabold lg:font-black text-6xl">

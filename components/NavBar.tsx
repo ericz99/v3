@@ -1,7 +1,7 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { GitHub, Linkedin } from "react-feather";
-import Hamburger from "hamburger-react";
+// import Hamburger from "hamburger-react";
 import { useSpring, animated, config } from "react-spring";
 import { Link as ReactScrollLink } from "react-scroll";
 
@@ -9,13 +9,13 @@ import GlobalContext from "../shared/context/GlobalContext";
 
 export default function NavBar() {
   const [shouldChange, setChange] = useState<boolean>(false);
-  const { setMenuToggle, menuToggle: toggle } = useContext(GlobalContext);
+  // const { setMenuToggle, menuToggle: toggle } = useContext(GlobalContext);
 
-  const mobileStyles = useSpring({
-    from: { transform: "translateX(-100%)" },
-    to: [{ transform: toggle ? "translateX(0%)" : "translateX(-100%)" }],
-    config: config.stiff,
-  });
+  // const mobileStyles = useSpring({
+  //   from: { transform: "translateX(-100%)" },
+  //   to: [{ transform: toggle ? "translateX(0%)" : "translateX(-100%)" }],
+  //   config: config.stiff,
+  // });
 
   const desktopStyles = useSpring({
     from: { opacity: 0 },
@@ -41,7 +41,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div className={`${toggle && "relative w-full h-full z-30"}`}>
+      {/* <div className={`${toggle && "relative w-full h-full z-30"}`}>
         <div
           className={`w-full p-4 text-white fixed right-0 z-20 lg:hidden ${
             shouldChange && "bg-slate-900"
@@ -76,7 +76,7 @@ export default function NavBar() {
             </li>
           </ul>
         </animated.div>
-      </div>
+      </div> */}
 
       <animated.div
         style={desktopStyles}
