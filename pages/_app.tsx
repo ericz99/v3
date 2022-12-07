@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <SEO
           description="Software Engineer :)"
           title="Eric Zhang"
-          siteTitle="Eric Zhang | Software Engineer @ 2023"
+          siteTitle="Software Engineer @ 2023"
         />
         <Component {...pageProps} />
       </GlobalState>
