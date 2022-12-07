@@ -14,17 +14,17 @@ export default function Hero() {
   return (
     <animated.div
       style={fadeHero}
-      className="relative px-6 pt-28 pb-28 h-full w-full flex flex-col items-center container mx-auto text-white lg:justify-center"
+      className="relative px-6 pt-14 pb-28 h-full w-full flex flex-col items-center container mx-auto text-white lg:justify-center"
     >
       <div className="flex flex-col justify-center items-center">
-        <h1 className="font-extrabold lg:font-black text-6xl">
+        <h1 className="font-extrabold lg:font-black text-5xl">
           Hi, I&apos;m Eric
         </h1>
         <span className="font-medium text-md lg:text-lg text-gray-600 my-4">
           Software Engineer @ ???
         </span>
 
-        <p className="font-extrabold text-6xl my-4 text-center lg:font-black lg:mx-6 lg:w-[50%] lg:leading-normal lg:my-0">
+        <p className="font-extrabold text-5xl my-4 text-center lg:font-black lg:mx-6 lg:w-[50%] lg:leading-normal lg:my-0">
           Passionate to craft amazing software application
         </p>
 
@@ -37,7 +37,7 @@ export default function Hero() {
         <Link
           href="https://www.linkedin.com/in/eric-zhang-241684155/"
           target="_blank"
-          className="cursor-pointer my-8 py-4 p-6 bg-white rounded-md text-black font-semibold"
+          className="cursor-pointer my-8 py-4 p-6 bg-white rounded-md text-black font-semibold text-sm"
         >
           Connect with me
         </Link>

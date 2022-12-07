@@ -16,9 +16,14 @@ export default function ProjectItem({ project, isOdd }: ProjectItemProps) {
       <div
         className={`z-30 row-span-full col-span-full ${
           isOdd ? "lg:col-start-1 lg:col-span-8" : "lg:col-span-8 lg:col-end-12"
-        } self-center lg:mix-blend-normal mix-blend-overlay h-96 w-full`}
+        } self-center lg:mix-blend-normal h-96 w-full relative`}
       >
-        <Link href={project.liveUrl} target="_blank" className="cursor-pointer">
+        <Link
+          href={project.liveUrl}
+          target="_blank"
+          className="cursor-pointer z-100"
+        >
+          <div className="bg-slate-800 opacity-70 w-full h-full absolute hover:opacity-100 hover:bg-transparent" />
           <Image
             alt="Project_something"
             src={project.imageUrl}
